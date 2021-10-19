@@ -1,0 +1,28 @@
+version: datasets/v0.2
+source: spotify
+title: Your Top 10 Most Listened To Artists (Short Term)
+questions: What are the top 10 artists I've recently listened to?
+description: |-
+  Your most listened to artists recently. (Approx. last 4 weeks).
+
+  #short-term
+metadata: |-
+  {
+    "name": "user_top_artists_short_term",
+    "label": "Your Most Listened To Artists", 
+    "related_table": {
+      "columns": [
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"}, 
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"},
+        {"name": "followers", "label": "Followers", "description": "Followers"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    artist_name "user_top_artists_short_term.artist_name"
+    , popularity "user_top_artists_short_term.popularity"
+    , followers "user_top_artists_short_term.followers"
+  FROM user_top_artists_short_term
+  LIMIT 10

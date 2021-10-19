@@ -1,0 +1,28 @@
+version: datasets/v0.2
+source: spotify
+title: Global - Top 10 Tracks Daily
+questions: What are the top 10 tracks listened to globaly today?
+description: |-
+  The top 10 tracks listened to globaly today.
+
+  #global
+metadata: |-
+  {
+    "name": "global_top_tracks_daily",
+    "label": "Global Top 10 Tracks Daily", 
+    "related_table": {
+      "columns": [
+        {"name": "track_name", "label": "Track Name", "description": "Track Name"}, 
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"},
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    track_name "global_top_tracks_daily.track_name"
+    , artist_name "global_top_tracks_daily.artist_name"
+    , popularity "global_top_tracks_daily.popularity"
+  FROM global_top_tracks_daily
+  LIMIT 10

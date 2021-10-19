@@ -1,0 +1,30 @@
+version: datasets/v0.2
+source: spotify
+title: Number of Songs per Artist Listened To - Top 10 - (Short Term)
+questions: What are the number of songs per artists in my top 50 most recently listened to tracks?
+description: |-
+  Your most listened to top 10 artists recently by number of their tracks you've listen to. (Approx. last 4 weeks).
+
+  #short-term
+metadata: |-
+  {
+    "name": "user_top_tracks_short_term",
+    "label": "Your Most Listened To Artist by No. Tracks", 
+    "related_table": {
+      "columns": [
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"}
+      ],
+      "aggregates": [
+        {"name": "track_count", "label": "Track Count", "description": "Track Count"}
+      ]
+    }
+  }
+visualisation: '{"chartjs-chart": {"chartType": "bar"}}'
+query: |-
+  SELECT
+    artist_name "user_top_tracks_short_term.artist_name"
+    , COUNT(*) "user_top_tracks_short_term.track_count"
+  FROM user_top_tracks_short_term
+  GROUP BY artist_name
+  ORDER BY "user_top_tracks_short_term.track_count" DESC
+  LIMIT 10

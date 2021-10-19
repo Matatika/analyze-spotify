@@ -1,0 +1,28 @@
+version: datasets/v0.2
+source: spotify
+title: Your Top 10 Most Listened To Artists (Long Term)
+questions: What are the top 10 artists I've listened to ever?
+description: |-
+  Your most listened to artists recently. (Calculated from several years of data).
+
+  #long-term
+metadata: |-
+  {
+    "name": "user_top_artists_long_term",
+    "label": "Your Most Listened To Artists", 
+    "related_table": {
+      "columns": [
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"}, 
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"},
+        {"name": "followers", "label": "Followers", "description": "Followers"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    artist_name "user_top_artists_long_term.artist_name"
+    , popularity "user_top_artists_long_term.popularity"
+    , followers "user_top_artists_long_term.followers"
+  FROM user_top_artists_long_term
+  LIMIT 10

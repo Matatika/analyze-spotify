@@ -1,0 +1,28 @@
+version: datasets/v0.2
+source: spotify
+title: Your Top 10 Most Listened To Artists (Medium Term)
+questions: What are the top 10 artists I've listened to over the last 6 months?
+description: |-
+  Your most listened to artists recently. (Approx. last 6 months).
+
+  #medium-term
+metadata: |-
+  {
+    "name": "user_top_artists_medium_term",
+    "label": "Your Most Listened To Artists", 
+    "related_table": {
+      "columns": [
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"}, 
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"},
+        {"name": "followers", "label": "Followers", "description": "Followers"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    artist_name "user_top_artists_medium_term.artist_name"
+    , popularity "user_top_artists_medium_term.popularity"
+    , followers "user_top_artists_medium_term.followers"
+  FROM user_top_artists_medium_term
+  LIMIT 10

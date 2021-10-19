@@ -1,0 +1,28 @@
+version: datasets/v0.2
+source: spotify
+title: Global - Top 10 Tracks Weekly
+questions: What are the top 10 tracks listened to globaly this week?
+description: |-
+  The top 10 tracks listened to globaly this week.
+
+  #global
+metadata: |-
+  {
+    "name": "global_top_tracks_weekly",
+    "label": "Global Top 10 Tracks Weekly", 
+    "related_table": {
+      "columns": [
+        {"name": "track_name", "label": "Track Name", "description": "Track Name"}, 
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"},
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    track_name "global_top_tracks_weekly.track_name"
+    , artist_name "global_top_tracks_weekly.artist_name"
+    , popularity "global_top_tracks_weekly.popularity"
+  FROM global_top_tracks_weekly
+  LIMIT 10
