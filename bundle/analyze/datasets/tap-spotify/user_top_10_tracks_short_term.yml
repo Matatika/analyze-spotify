@@ -25,4 +25,5 @@ query: |-
     , artist_name "user_top_tracks_short_term.artist_name"
     , popularity "user_top_tracks_short_term.popularity"
   FROM user_top_tracks_short_term
+  ORDER BY rank ASC
   LIMIT 10

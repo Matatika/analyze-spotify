@@ -25,4 +25,5 @@ query: |-
     , artist_name "global_viral_tracks_daily.artist_name"
     , popularity "global_viral_tracks_daily.popularity"
   FROM global_viral_tracks_daily
+  ORDER BY rank ASC
   LIMIT 10

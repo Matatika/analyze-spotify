@@ -39,4 +39,5 @@ query: |-
     concat(track_name, ' - ', artist_name) "user_top_tracks_short_term.track_info"
     , popularity "user_top_tracks_short_term.popularity"
   FROM user_top_tracks_short_term
+  ORDER BY rank ASC
   LIMIT 10

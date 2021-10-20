@@ -25,4 +25,5 @@ query: |-
     , popularity "user_top_artists_medium_term.popularity"
     , followers "user_top_artists_medium_term.followers"
   FROM user_top_artists_medium_term
+  ORDER BY rank ASC
   LIMIT 10
