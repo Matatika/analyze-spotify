@@ -1,9 +1,9 @@
 version: datasets/v0.2
 source: spotify
-title: Number of Songs per Artist Listened To - Top 10 - (Short Term)
+title: Your Top 10 Arists Listened To By Track Count - (Short Term)
 questions: What are the number of songs per artists in my top 50 most recently listened to tracks?
 description: |-
-  Your most listened to top 10 artists recently by number of their tracks you've listen to. (Approx. last 4 weeks).
+  Your most recently listened to top 10 artists by number of their tracks you've listen to. (Approx. last 4 weeks).
 
   #short-term
 metadata: |-
