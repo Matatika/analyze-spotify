@@ -1,0 +1,48 @@
+version: datasets/v0.2
+source: spotify
+title: Your Top 25 Tracks Popularity Compared With Their Average - Medium Term
+questions: What are the popularity of my top 25 medium term played tracks compared to their average?
+description: |-
+  Your top 25 tracks popularity and the average of the popularity of those 25 tracks. (Approx. last 6 months).
+
+  #medium-term
+metadata: |-
+  {
+    "name": "user_top_tracks_medium_term",
+    "label": "Top 25 Tracks Popularity & Average", 
+    "related_table": {
+      "columns": [
+        {"name": "name", "label": "Name", "description": "Name"}
+      ],
+      "aggregates": [
+        {"name": "avg_popularity", "label": "Avg. Popularity", "description": "Avg. Popularity"},
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "line", 
+      "options": {
+        "scales": {
+          "yAxes": [{
+            "ticks": {
+              "beginAtZero": true
+            }
+          }]
+        }
+      }
+    }
+  }
+query: |-
+  SELECT 
+    (SELECT ROUND(AVG(popularity)) 
+    FROM (SELECT * 
+    	FROM user_top_tracks_medium_term 
+    	ORDER BY rank 
+    	LIMIT 25) AS t2) "user_top_tracks_medium_term.avg_popularity"
+    , popularity "user_top_tracks_medium_term.popularity"
+    , CONCAT(track_name, ' - ', artist_name) "user_top_tracks_medium_term.name"
+  FROM user_top_tracks_medium_term uttmt
+  ORDER BY rank 
+  LIMIT 25

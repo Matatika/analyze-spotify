@@ -1,0 +1,48 @@
+version: datasets/v0.2
+source: spotify
+title: Your Top 30 Genres Listened To (Long Term)
+questions: What are the top 30 genres I've listened to in the long term?
+description: |-
+  Your most listened to top 30 genres long term.
+
+  Each artist can, and usually does, have multiple genres. 
+  This is the count of how many times each genre appears, so you can see your overall top 10 genres.
+  
+  (This does mean that you likely will have more genres listed here that number of artists you've listened to).
+
+  #long-term
+metadata: |-
+  {
+    "name": "user_top_artists_long_term",
+    "label": "Your Most Listened Genres By Artist Long Term", 
+    "related_table": {
+      "columns": [
+        {"name": "genre", "label": "Genre", "description": "Genre"}
+      ],
+      "aggregates": [
+        {"name": "genre_count", "label": "Genre Count", "description": "Genre Count"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "bar", 
+      "options": {
+        "scales": {
+          "yAxes": [{
+            "ticks": {
+              "beginAtZero": true
+            }
+          }]
+        }
+      }
+    }
+  }
+query: |-
+  SELECT 
+  	COUNT(g.value) "user_top_artists_long_term.genre_count"
+  	, g.value "user_top_artists_long_term.genre"
+  FROM user_top_artists_long_term utast, JSONB_ARRAY_ELEMENTS_TEXT(utast.genres) g
+  GROUP BY g.value
+  ORDER BY "user_top_artists_long_term.genre_count" DESC
+  LIMIT 30
