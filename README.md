@@ -10,7 +10,7 @@ files:
 - name: analyze-spotify
   namespace: tap_spotify
   update:
-    analyze/datasets: true
+    analyze/datasets/tap-spotify: true
   repo: https://github.com/Matatika/analyze-spotify
   pip_url: git+https://github.com/Matatika/analyze-spotify.git
 ```
