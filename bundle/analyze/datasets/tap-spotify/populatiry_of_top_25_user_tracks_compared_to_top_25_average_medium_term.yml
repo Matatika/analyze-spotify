@@ -12,7 +12,7 @@ metadata: |-
     "label": "Top 25 Tracks Popularity & Average", 
     "related_table": {
       "columns": [
-        {"name": "name", "label": "Name", "description": "Name"}
+        {"name": "track_name", "label": "Track Name", "description": "Track Name"}
       ],
       "aggregates": [
         {"name": "avg_popularity", "label": "Avg. Popularity", "description": "Avg. Popularity"},
@@ -42,7 +42,8 @@ query: |-
     	ORDER BY rank 
     	LIMIT 25) AS t2) "user_top_tracks_medium_term.avg_popularity"
     , popularity "user_top_tracks_medium_term.popularity"
-    , CONCAT(track_name, ' - ', artist_name) "user_top_tracks_medium_term.name"
+    , track_name "user_top_tracks_medium_term.track_name"
+    , artist_name "Artist Name"
   FROM user_top_tracks_medium_term uttmt
   ORDER BY rank 
   LIMIT 25
