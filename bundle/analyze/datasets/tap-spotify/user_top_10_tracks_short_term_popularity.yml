@@ -12,7 +12,7 @@ metadata: |-
     "label": "Your Most Listened To Tracks And Popularity", 
     "related_table": {
       "columns": [
-        {"name": "track_info", "label": "Track", "description": "Track"}
+        {"name": "track_name", "label": "Track Name", "description": "Track Name"}
       ],
       "aggregates": [
         {"name": "popularity", "label": "Popularity", "description": "Popularity"}
@@ -36,7 +36,8 @@ visualisation: |-
   }
 query: |-
   SELECT
-    concat(track_name, ' - ', artist_name) "user_top_tracks_short_term.track_info"
+    track_name "user_top_tracks_short_term.track_name"
+    , artist_name "Artist(s) Name"
     , popularity "user_top_tracks_short_term.popularity"
   FROM user_top_tracks_short_term
   ORDER BY rank ASC
