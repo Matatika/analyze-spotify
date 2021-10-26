@@ -6,12 +6,6 @@ Files:
 
 To add tap-spotify and its related plugins to your Matatika workspace:
 ```yaml
-files:
-  - name: analyze-spotify
-    namespace: tap_spotify
-    update:
-      analyze/datasets/tap-spotify: true
-    pip_url: git+https://github.com/Matatika/analyze-spotify.git
 extractors:
   - name: tap-spotify
     pip_url: git+https://github.com/Matatika/tap-spotify.git
@@ -32,6 +26,12 @@ transforms:
     pip_url: https://github.com/Matatika/dbt-tap-solarvista.git
     vars:
       schema: "{{ env_var('DBT_SOURCE_SCHEMA') }}"
+files:
+  - name: analyze-spotify
+    namespace: tap_spotify
+    update:
+      analyze/datasets/tap-spotify: true
+    pip_url: git+https://github.com/Matatika/analyze-spotify.git
 ```
 
 Add plugin to your Meltano project:
