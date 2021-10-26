@@ -1,10 +1,10 @@
 # analyze-spotify
-Meltano project [file bundle](https://meltano.com/docs/command-line-interface.html#file-bundle) of Matatika datasets for Spotify.
+Meltano project [file bundle](https://meltano.com/docs/command-line-interface.html#file-bundle) of Matatika datasets for [tap-spotify](https://github.com/Matatika/tap-spotify).
 
 Files:
 - [`analyze/datasets/tap-spotify`](./bundle/analyze/datasets/tap-spotify) (directory)
 
-To add tap-spotify and its related plugins to your Matatika workspace:
+To add [tap-spotify](https://github.com/Matatika/tap-spotify) and its related plugins to your Matatika workspace:
 ```yaml
 extractors:
   - name: tap-spotify
