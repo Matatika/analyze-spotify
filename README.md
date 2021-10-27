@@ -23,7 +23,7 @@ extractors:
 transforms:
   - name: dbt-tap-spotify
     namespace: tap_spotify
-    pip_url: https://github.com/Matatika/dbt-tap-solarvista.git
+    pip_url: git+https://github.com/Matatika/dbt-tap-spotify.git
     vars:
       schema: "{{ env_var('DBT_SOURCE_SCHEMA') }}"
 files:
