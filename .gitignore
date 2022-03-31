@@ -20,3 +20,10 @@ venv.bak/
 
 # vscode
 .vscode
+
+# Python build files
+
+build/
+*.egg-info
+__pycache__
+output/
