@@ -1,5 +1,5 @@
 # analyze-spotify
-Meltano project [file bundle](https://meltano.com/docs/command-line-interface.html#file-bundle) of Matatika datasets for [tap-spotify](https://github.com/Matatika/tap-spotify).
+Meltano project [file bundle](https://meltano.com/docs/command-line-interface.html#file-bundle) of Matatika datasets for [tap-spotify](https://github.com/Matatika/tap-spotify). These datasets are automatically added to your Matatika workspace when you initialize a Shopify pipeline.
 
 Files:
 - [`analyze/datasets/tap-spotify`](./bundle/analyze/datasets/tap-spotify) (directory)
