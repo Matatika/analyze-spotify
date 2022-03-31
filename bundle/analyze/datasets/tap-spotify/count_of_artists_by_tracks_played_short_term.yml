@@ -19,7 +19,18 @@ metadata: |-
       ]
     }
   }
-visualisation: '{"chartjs-chart": {"chartType": "bar"}}'
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "bar", 
+      "options": {
+        "scales": {
+          "y": {
+            "beginAtZero": true
+          }
+        }
+      }
+    }
+  }
 query: |-
   SELECT
     artist_name "user_top_tracks_short_term.artist_name"

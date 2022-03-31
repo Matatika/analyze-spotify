@@ -24,12 +24,10 @@ visualisation: |-
     {"chartType": "bar", 
       "options": {
         "scales": {
-          "yAxes": [{
-            "ticks": {
-              "beginAtZero": true,
-              "max": 100
-            }
-          }]
+          "y": {
+            "beginAtZero": true,
+            "max": 100
+          }
         }
       }
     }

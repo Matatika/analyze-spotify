@@ -7,7 +7,7 @@ description: |-
 
   Each artist can, and usually does, have multiple genres. 
   This is the count of how many times each genre appears, so you can see your overall top 10 genres.
-  
+
   (This does mean that you likely will have more genres listed here that number of artists you've listened to).
 
   #long-term
@@ -29,11 +29,9 @@ visualisation: |-
     {"chartType": "bar", 
       "options": {
         "scales": {
-          "yAxes": [{
-            "ticks": {
-              "beginAtZero": true
-            }
-          }]
+          "y": {
+            "beginAtZero": true
+          }
         }
       }
     }
