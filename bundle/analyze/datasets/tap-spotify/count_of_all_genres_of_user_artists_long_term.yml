@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Your Top 30 Genres Listened To (Long Term)
 questions: What are the top 30 genres I've listened to in the long term?
 description: |-

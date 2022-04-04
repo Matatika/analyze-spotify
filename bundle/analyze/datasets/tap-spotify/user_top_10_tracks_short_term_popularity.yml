@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Your Top 10 Most Listened To Tracks Popularity (Short Term)
 questions: What are the top 10 tracks I've recently listened to and their popularity?
 description: |-

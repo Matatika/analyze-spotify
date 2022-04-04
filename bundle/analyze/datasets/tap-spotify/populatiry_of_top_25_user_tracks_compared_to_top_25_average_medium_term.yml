@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Your Top 25 Tracks Popularity Compared With Their Average - Medium Term
 questions: What are the popularity of my top 25 medium term played tracks compared to their average?
 description: |-

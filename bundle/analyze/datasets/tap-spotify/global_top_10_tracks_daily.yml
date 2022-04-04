@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Global - Top 10 Tracks Daily
 questions: What are the top 10 tracks listened to globaly today?
 description: |-

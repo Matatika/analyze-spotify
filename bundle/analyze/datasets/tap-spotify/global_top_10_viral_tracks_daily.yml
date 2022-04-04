@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Global - Top 10 Viral Tracks Daily
 questions: What are the top 10 viral tracks listened to globaly today?
 description: |-

@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Your Top 10 Most Listened To Artists (Long Term)
 questions: What are the top 10 artists I've listened to ever?
 description: |-

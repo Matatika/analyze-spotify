@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Export - Global Tracks Weekly
 questions: What are the top global tracks week?
 description: |-

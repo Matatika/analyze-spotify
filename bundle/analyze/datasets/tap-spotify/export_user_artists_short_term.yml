@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Export - User Artists Short Term
 questions: What does all my user artists short term data look like?
 description: |-

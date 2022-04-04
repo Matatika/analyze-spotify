@@ -1,5 +1,5 @@
 version: datasets/v0.2
-source: spotify
+source: tap-spotify
 title: Export - Global Tracks daily
 questions: What are the top global tracks day?
 description: |-
