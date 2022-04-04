@@ -13,7 +13,7 @@ description: |-
   #long-term
 metadata: |-
   {
-    "name": "user_top_artists_long_term",
+    "name": "vw_top_listened_to_genre_long_term",
     "label": "Your Most Listened Genres By Artist Long Term", 
     "related_table": {
       "columns": [
@@ -38,9 +38,7 @@ visualisation: |-
   }
 query: |-
   SELECT 
-  	COUNT(g.value) "user_top_artists_long_term.genre_count"
-  	, g.value "user_top_artists_long_term.genre"
-  FROM user_top_artists_long_term utast, JSONB_ARRAY_ELEMENTS_TEXT(utast.genres) g
-  GROUP BY g.value
-  ORDER BY "user_top_artists_long_term.genre_count" DESC
+  	genre "vw_top_listened_to_genre_long_term.genre"
+    , genre_count "vw_top_listened_to_genre_long_term.genre_count"
+  FROM vw_top_listened_to_genre_long_term
   LIMIT 30
