@@ -1,0 +1,29 @@
+version: datasets/v0.2
+source: tap-spotify
+title: Your Top 10 Most Listened To Tracks (Medium Term)
+questions: What are the top 10 tracks I've recently listened to?
+description: |-
+  Your most listened to tracks recently. (Approx. last 6 months).
+
+  #medium-term
+metadata: |-
+  {
+    "name": "user_top_tracks_medium_term",
+    "label": "Your Most Listened To Tracks", 
+    "related_table": {
+      "columns": [
+        {"name": "track_name", "label": "Track Name", "description": "Track Name"}, 
+        {"name": "artist_name", "label": "Artist Name", "description": "Artist Name"},
+        {"name": "popularity", "label": "Popularity", "description": "Popularity"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    track_name "user_top_tracks_medium_term.track_name"
+    , artist_name "user_top_tracks_medium_term.artist_name"
+    , popularity "user_top_tracks_medium_term.popularity"
+  FROM user_top_tracks_medium_term
+  ORDER BY rank ASC
+  LIMIT 10
